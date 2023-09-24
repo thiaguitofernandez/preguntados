@@ -6,7 +6,7 @@ from constantes import *
 from variables import *
 from datos import lista
 
-def logica_pregunta(numero_pregunta,respuesta,vidas:int):
+def logica_pregunta(numero_pregunta,respuesta,):
     if respuesta == correctas[numero_pregunta]:
         preguntas_respondidas.append(numero_pregunta)
         sonido_correcto.play()
@@ -86,11 +86,11 @@ while corriendo:
             puntos = 0
             inicio_juego = False
         case 2:
-            ternario = logica_pregunta(pregunta_actual,"a",vidas)
+            ternario = logica_pregunta(pregunta_actual,"a")
         case 3:
-            ternario = logica_pregunta(pregunta_actual,"b",vidas)
+            ternario = logica_pregunta(pregunta_actual,"b")
         case 4:
-            ternario = logica_pregunta(pregunta_actual,"c",vidas)
+            ternario = logica_pregunta(pregunta_actual,"c")
     
     
     if type(ternario) == int:
@@ -101,6 +101,7 @@ while corriendo:
                 pregunta_actual = elegir_pregunta(preguntas_respondidas)
         else:
             puntos += 10
+            vidas = 2
             pregunta_actual = ternario
     elif (ternario):
         inicio_juego = False

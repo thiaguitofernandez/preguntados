@@ -15,5 +15,5 @@ POS_FELICITACION = (220, 330)
 POS_PUNTUACION_FINAL = (350, 390)
 MENSAJE_FELICITACION = "Felicitaciones a respondido a todas las preguntas."
 
-UBI_IMAGENES = "preguntados\\imagenes\\"
-UBI_SONIDOS = "preguntados\\sonidos\\"
+UBI_IMAGENES = "imagenes\\"
+UBI_SONIDOS = "sonidos\\"
