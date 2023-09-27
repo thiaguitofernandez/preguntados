@@ -79,12 +79,14 @@ while corriendo:
             if inicio_juego and not(termino):
                 preguntas_respondidas.append(pregunta_actual)
                 elegir_pregunta(preguntas_respondidas)
-            inicio_juego = True 
+            elif not(termino):
+                inicio_juego = True 
         case 1:
             elegir_pregunta(preguntas_respondidas)
             preguntas_respondidas = []
             puntos = 0
             inicio_juego = False
+            termino = False
         case 2:
             ternario = logica_pregunta(pregunta_actual,"a")
         case 3:
@@ -104,8 +106,10 @@ while corriendo:
             vidas = 2
             pregunta_actual = ternario
     elif (ternario):
+        puntos += 10
         inicio_juego = False
         termino = True
+        
     ternario = None
     numero_colision = None
 
@@ -144,12 +148,12 @@ while corriendo:
         if len(lista_rect) == 2:
             for cantidad_respuestas in range(3):
                 lista_rect.append("")
-            lista_rect[2] = respuestaA.get_rect()
-            lista_rect[2].move_ip(POS_RECT_OPCION_A)
-            lista_rect[3] = respuestaB.get_rect()
-            lista_rect[3].move_ip(POS_RECT_OPCION_B)
-            lista_rect[4] = respuestaC.get_rect()
-            lista_rect[4] .move_ip(POS_RECT_OPCION_C )
+        lista_rect[2] = respuestaA.get_rect()
+        lista_rect[2].move_ip(POS_RECT_OPCION_A)
+        lista_rect[3] = respuestaB.get_rect()
+        lista_rect[3].move_ip(POS_RECT_OPCION_B)
+        lista_rect[4] = respuestaC.get_rect()
+        lista_rect[4] .move_ip(POS_RECT_OPCION_C )
 
     if termino :
         mensaje_felicitacion = "Felicitaciones a respondido a todas las preguntas."
